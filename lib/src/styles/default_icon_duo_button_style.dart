@@ -44,7 +44,7 @@ class DefaultIconDuoButtonStyle extends DuoButtonStyle {
         top: BorderSide(width: 2.0),
         left: BorderSide(width: 2.0),
         right: BorderSide(width: 2.0),
-        bottom: BorderSide(width: 2.0 + 0.0001),
+        bottom: BorderSide(width: 2.0),
       ));
 
   @override

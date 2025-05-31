@@ -56,7 +56,7 @@ class IconDuoButton extends StyledDuoButton {
           top: BorderSide(width: outlineWidth),
           left: BorderSide(width: outlineWidth),
           right: BorderSide(width: outlineWidth),
-          bottom: BorderSide(width: outlineWidth + 0.0001),
+          bottom: BorderSide(width: outlineWidth),
         )),
     };
 
