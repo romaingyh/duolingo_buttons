@@ -14,16 +14,13 @@ class DefaultOutlinedDuoButtonStyle extends DuoButtonStyle {
 
   @override
   WidgetStateProperty<TextStyle?> get textStyle =>
-      WidgetStatePropertyAll<TextStyle?>(
-          Theme.of(context).textTheme.labelLarge);
+      WidgetStatePropertyAll<TextStyle?>(Theme.of(context).textTheme.labelLarge);
 
   @override
-  WidgetStateProperty<Color?>? get backgroundColor =>
-      const WidgetStatePropertyAll(null);
+  WidgetStateProperty<Color?>? get backgroundColor => const WidgetStatePropertyAll(null);
 
   @override
-  WidgetStateProperty<Color?>? get foregroundColor =>
-      WidgetStateProperty.resolveWith((Set<WidgetState> states) {
+  WidgetStateProperty<Color?>? get foregroundColor => WidgetStateProperty.resolveWith((Set<WidgetState> states) {
         if (states.contains(WidgetState.disabled)) {
           return _colors.onSurface.withValues(alpha: 0.38);
         }
@@ -31,8 +28,7 @@ class DefaultOutlinedDuoButtonStyle extends DuoButtonStyle {
       });
 
   @override
-  WidgetStateProperty<Color?>? get outlineColor =>
-      WidgetStateProperty.resolveWith((Set<WidgetState> states) {
+  WidgetStateProperty<Color?>? get outlineColor => WidgetStateProperty.resolveWith((Set<WidgetState> states) {
         if (states.contains(WidgetState.disabled)) {
           return _colors.onSurface.withValues(alpha: 0.12);
         }
@@ -54,27 +50,23 @@ class DefaultOutlinedDuoButtonStyle extends DuoButtonStyle {
       );
 
   @override
-  WidgetStateProperty<double?>? get borderRadius =>
-      const WidgetStatePropertyAll<double?>(12.0);
+  WidgetStateProperty<double?>? get borderRadius => const WidgetStatePropertyAll<double?>(12.0);
 
   @override
   WidgetStateProperty<EdgeInsetsGeometry>? get padding =>
       WidgetStatePropertyAll<EdgeInsetsGeometry>(super.scaledPadding(context));
 
   @override
-  WidgetStateProperty<Size>? get minimumSize =>
-      const WidgetStatePropertyAll<Size>(Size(64.0, 40.0));
+  WidgetStateProperty<Size>? get minimumSize => const WidgetStatePropertyAll<Size>(Size(64.0, 40.0));
 
   // No default fixedSize
 
   @override
-  WidgetStateProperty<Size>? get maximumSize =>
-      const WidgetStatePropertyAll<Size>(Size.infinite);
+  WidgetStateProperty<Size>? get maximumSize => const WidgetStatePropertyAll<Size>(Size.infinite);
 
   @override
   VisualDensity? get visualDensity => Theme.of(context).visualDensity;
 
   @override
-  MaterialTapTargetSize? get tapTargetSize =>
-      Theme.of(context).materialTapTargetSize;
+  MaterialTapTargetSize? get tapTargetSize => Theme.of(context).materialTapTargetSize;
 }
