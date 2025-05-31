@@ -1,37 +1,18 @@
 import 'package:duolingo_buttons/duolingo_buttons.dart';
-import 'package:duolingo_buttons/src/widgets/duo_button_with_icon_child.dart';
 import 'package:flutter/material.dart';
 
-class OutlinedDuoButton extends StyledDuoButton {
-  const OutlinedDuoButton({
+class IconDuoButton extends StyledDuoButton {
+  const IconDuoButton({
     super.key,
     super.onPressed,
     super.onLongPress,
     super.style,
-    required super.child,
-  });
-
-  OutlinedDuoButton.icon({
-    super.key,
-    super.onPressed,
-    super.onLongPress,
-    super.style,
-    required Widget label,
     required Widget icon,
-    IconAlignment iconAlignment = IconAlignment.start,
-  }) : super(
-          child: DuoButtonWithIconChild(
-            label: label,
-            icon: icon,
-            buttonStyle: style,
-            iconAlignment: iconAlignment,
-          ),
-        );
+  }) : super(child: icon);
 
-  /// A static convenience method that constructs an outlined duo button
+  /// A static convenience method that constructs a
   /// [DuoButtonStyle] given simple values.
   static DuoButtonStyle styleFrom({
-    TextStyle? textStyle,
     Color? foregroundColor,
     Color? disabledForegroundColor,
     Color? outlineColor,
@@ -80,12 +61,12 @@ class OutlinedDuoButton extends StyledDuoButton {
     };
 
     return DuoButtonStyle(
-      textStyle: WidgetStatePropertyAll<TextStyle?>(textStyle),
+      textStyle: null,
       backgroundColor: null,
       foregroundColor: foregroundColorProp,
       outlineColor: outlineColorProp,
-      chinHeight: chinHeight,
       border: borderProp,
+      chinHeight: chinHeight,
       borderRadius: allOrNull<double>(borderRadius),
       padding: allOrNull<EdgeInsetsGeometry>(padding),
       minimumSize: allOrNull<Size>(minimumSize),
@@ -101,11 +82,11 @@ class OutlinedDuoButton extends StyledDuoButton {
 
   @override
   DuoButtonStyle defaultStyleOf(BuildContext context) {
-    return DefaultOutlinedDuoButtonStyle(context);
+    return DefaultIconDuoButtonStyle(context);
   }
 
   @override
   DuoButtonStyle? themeStyleOf(BuildContext context) {
-    return Theme.of(context).extension<OutlinedDuoButtonThemeExtension>()?.style;
+    return Theme.of(context).extension<IconDuoButtonThemeExtension>()?.style;
   }
 }

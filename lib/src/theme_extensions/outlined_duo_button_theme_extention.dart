@@ -16,11 +16,11 @@ class OutlinedDuoButtonThemeExtension extends ThemeExtension<OutlinedDuoButtonTh
   /// The [style] may be null.
   const OutlinedDuoButtonThemeExtension({this.style});
 
-  /// Overrides for [DuoButton]'s default style.
+  /// Overrides for [OutlinedDuoButton]'s default style.
   ///
   /// Non-null properties or non-null resolved [WidgetStateProperty]
   /// values override the [DuoButtonStyle] returned by
-  /// [DuoButton.defaultStyleOf].
+  /// [OutlinedDuoButton.defaultStyleOf].
   ///
   /// If [style] is null, then this theme doesn't override anything.
   final DuoButtonStyle? style;

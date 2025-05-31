@@ -3,42 +3,42 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /// A [DuoButtonStyle] that overrides the default appearance of
-/// [DuoButton]s when it's used as [ThemeExtension].
+/// [IconDuoButton]s when it's used as [ThemeExtension].
 ///
-/// The [style]'s properties override [DuoButton]'s default style,
-/// i.e. the [DuoButtonStyle] returned by [DuoButton.defaultStyleOf]. Only
+/// The [style]'s properties override [IconDuoButton]'s default style,
+/// i.e. the [DuoButtonStyle] returned by [IconDuoButton.defaultStyleOf]. Only
 /// the style's non-null property values or resolved non-null
 /// [WidgetStateProperty] values are used.
 @immutable
-class DuoButtonThemeExtension extends ThemeExtension<DuoButtonThemeExtension> with Diagnosticable {
-  /// Creates a [DuoButtonThemeExtension].
+class IconDuoButtonThemeExtension extends ThemeExtension<IconDuoButtonThemeExtension> with Diagnosticable {
+  /// Creates an [IconDuoButtonThemeExtension].
   ///
   /// The [style] may be null.
-  const DuoButtonThemeExtension({this.style});
+  const IconDuoButtonThemeExtension({this.style});
 
-  /// Overrides for [DuoButton]'s default style.
+  /// Overrides for [IconDuoButton]'s default style.
   ///
   /// Non-null properties or non-null resolved [WidgetStateProperty]
   /// values override the [DuoButtonStyle] returned by
-  /// [DuoButton.defaultStyleOf].
+  /// [IconDuoButton.defaultStyleOf].
   ///
   /// If [style] is null, then this theme doesn't override anything.
   final DuoButtonStyle? style;
 
   /// Linearly interpolate between two duo button themes.
   @override
-  DuoButtonThemeExtension lerp(DuoButtonThemeExtension? other, double t) {
+  IconDuoButtonThemeExtension lerp(IconDuoButtonThemeExtension? other, double t) {
     if (identical(this, other)) {
       return this;
     }
-    return DuoButtonThemeExtension(
+    return IconDuoButtonThemeExtension(
       style: DuoButtonStyle.lerp(style, other?.style, t),
     );
   }
 
   @override
-  ThemeExtension<DuoButtonThemeExtension> copyWith({DuoButtonStyle? style}) {
-    return DuoButtonThemeExtension(style: style ?? this.style);
+  ThemeExtension<IconDuoButtonThemeExtension> copyWith({DuoButtonStyle? style}) {
+    return IconDuoButtonThemeExtension(style: style ?? this.style);
   }
 
   @override
@@ -52,7 +52,7 @@ class DuoButtonThemeExtension extends ThemeExtension<DuoButtonThemeExtension> wi
     if (other.runtimeType != runtimeType) {
       return false;
     }
-    return other is DuoButtonThemeExtension && other.style == style;
+    return other is IconDuoButtonThemeExtension && other.style == style;
   }
 
   @override
