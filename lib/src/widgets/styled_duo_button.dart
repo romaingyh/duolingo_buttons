@@ -128,7 +128,7 @@ class _StyledDuoButtonState extends State<StyledDuoButton> with TickerProviderSt
               color: resolvedOutlineColor,
               strokeAlign: BorderSide.strokeAlignOutside,
             ) ??
-            const BorderSide(strokeAlign: BorderSide.strokeAlignOutside),
+            BorderSide(strokeAlign: BorderSide.strokeAlignOutside, color: resolvedOutlineColor),
       },
     );
   }
